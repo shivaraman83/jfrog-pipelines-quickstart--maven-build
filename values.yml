@@ -1,0 +1,4 @@
+repoPath: tsuyo/jfrog-pipelines-quickstart--maven-build
+gitProvider: tsuyo_github
+artifactory: artifactory
+deployerRepo: libs-snapshot
