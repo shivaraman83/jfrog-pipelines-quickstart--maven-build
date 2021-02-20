@@ -2,37 +2,37 @@ template: true
 valuesFilePath: ./values.yml
 
 resources:
-  - name: mvn_repo
+  - name: {{ .Values.gitRepo.name }}
     type: GitRepo
     configuration:
-      path: {{ .Values.repoPath }}
-      gitProvider: {{ .Values.gitProvider }}
+      gitProvider: {{ .Values.gitRepo.provider }}
+      path: {{ .Values.gitRepo.path }}
 
-  - name: mvn_build_info
+  - name: {{ .Values.pipelines.name }}
     type: BuildInfo
     configuration:
       sourceArtifactory: {{ .Values.artifactory }}
 
 pipelines:
-  - name: demo_maven
+  - name: {{ .Values.pipelines.name }}
     steps:
-      - name: mvn_build_step
+      - name: mvn_build
         type: MvnBuild
         configuration:
-          deployerSnapshotRepo: {{ .Values.deployerRepo }}
-          deployerReleaseRepo: {{ .Values.deployerRepo }}
-          resolverSnapshotRepo: {{ .Values.resolverRepo }}
-          resolverReleaseRepo: {{ .Values.resolverRepo }}
+          deployerSnapshotRepo: {{ .Values.artifactoryRepo.resolver.snapshot.name }}
+          deployerReleaseRepo: {{ .Values.artifactoryRepo.resolver.release.name }}
+          resolverSnapshotRepo: {{ .Values.artifactoryRepo.target.snapshot.name }}
+          resolverReleaseRepo: {{ .Values.artifactoryRepo.target.release.name }}
           inputResources:
-            - name: mvn_repo
+            - name: {{ .Values.gitRepo.name }}
           integrations:
             - name: {{ .Values.artifactory }}
 
-      - name: publish_build
+      - name: publish_build_info
         type: PublishBuildInfo
         configuration:
           forceXrayScan: false
           inputSteps:
-            - name: mvn_build_step
+            - name: mvn_build
           outputResources:
-            - name: mvn_build_info
+            - name: {{ .Values.pipelines.name }}
