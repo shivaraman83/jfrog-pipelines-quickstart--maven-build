@@ -4,7 +4,7 @@ pipelines:
 gitRepo:
   name: github__tsuyo__jfrog_pipelines_quickstart__maven_build
   path: tsuyo/jfrog-pipelines-quickstart--maven-build
-  provider: tsuyo_github
+  provider: siva_guthub
 artifactoryRepo:
   resolver:
     snapshot:
