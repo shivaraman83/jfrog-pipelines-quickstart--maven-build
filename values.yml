@@ -3,7 +3,7 @@ pipelines:
   name: quickstart_maven_build
 gitRepo:
   name: github__tsuyo__jfrog_pipelines_quickstart__maven_build
-  path: tsuyo/jfrog-pipelines-quickstart--maven-build
+  path: shivaraman83/jfrog-pipelines-quickstart--maven-build
   provider: siva_guthub
 artifactoryRepo:
   resolver:
