@@ -2,9 +2,9 @@ artifactory: artifactory
 pipelines:
   name: quickstart_maven_build
 gitRepo:
-  name: github__tsuyo__jfrog_pipelines_quickstart__maven_build
+  name: quickstart__maven_build
   path: shivaraman83/jfrog-pipelines-quickstart--maven-build
-  provider: siva_guthub
+  provider: siva_github
 artifactoryRepo:
   resolver:
     snapshot:
