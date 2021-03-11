@@ -1,4 +1,4 @@
-artifactory: artifactory
+artifactory: ArtifactoryUnified
 pipelines:
   name: quickstart_maven_build
 gitRepo:
