@@ -7,4 +7,4 @@ resolver:
 deployer:
   snapshotRepo: ui_server-maven-dev-local
   releaseRepo: ui_server-maven-staging-local
-  serverID: Default-Server
+  serverID: ArtifactoryUnified
