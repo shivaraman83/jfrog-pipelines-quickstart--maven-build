@@ -5,12 +5,7 @@ Sources for [Pipeline Example: Maven Build](https://www.jfrog.com/confluence/dis
 ## Prerequisites
 
 - Integrations
-  - tsuyo_github: GitHub
-  - artifactory: Artifactory
+  - siva_github: GitHub
+  - artifactory: ArtifactoryUnified
 - Repos
-  - libs-snapshot-local (maven/local)
-    - Handle Snapshots
-  - jcenter (maven/remote)
-    - URL: https://jcenter.bintray.com
-  - libs-snapshot (maven/virtual)
-    - includes: libs-snapshot-local, jcenter
+  - mvn-art-config file
